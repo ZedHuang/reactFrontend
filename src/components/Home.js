@@ -13,8 +13,8 @@ export class Home extends Component {
       songList:[],
       error:"no",
       email:null,
-      id:10,
-      rating:5,
+      id:1,
+      rating:1,
       comment:"aaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       song_name:"",
       song_artist:""
@@ -26,7 +26,7 @@ export class Home extends Component {
 
     if(localStorage.getItem("email")){
       let e=localStorage.getItem("email");
-      this.setState({email:e},console.log("Get email from app component "+e));
+      this.setState({email:e},console.log("Home get email from app component "+e));
         fetch('http://localhost:5080/billboard100', { 
             method: 'POST'
         }) 

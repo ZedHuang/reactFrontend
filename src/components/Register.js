@@ -31,7 +31,7 @@ export class Register extends Component {
     }
 
     handleClick(event){
-  
+      var me = this;
       const form = event.currentTarget;
       if (form.checkValidity() === false) {
         event.preventDefault();
@@ -56,9 +56,11 @@ export class Register extends Component {
       .then(
         response=>{
           if(response.ok){
-            if (window.confirm('Registered successfully! Go to login ?')){
-              window.location = '/';
-            }
+            //if (window.confirm('Registered successfully! Go to login ?')){
+              //window.location = '/';
+              me.props.handleLogin(user.email);
+              window.location="/home";
+            //}
           }
           else{
             console.log("Email has been registered");

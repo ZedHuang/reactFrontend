@@ -39,7 +39,8 @@ class App extends Component {
       <BrowserRouter >
         <Route exact path='/' handleLogin={this.handleLogin} handleLogout={this.handleLogout} render={
           props => <Login {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} />} />
-        <Route path="/register" component={Register}/>
+        <Route exact path='/register' handleLogin={this.handleLogin}  render={
+          props => <Register {...props} handleLogin={this.handleLogin} />} />
         <Route path="/unauthorized" component={Unauthorized} />
         <Route exact path='/home' email={this.state.email} render={
           props => <Home {...props} email={this.state.email} />} />

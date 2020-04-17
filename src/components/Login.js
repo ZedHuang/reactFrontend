@@ -68,9 +68,6 @@ export class Login extends Component {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" placeholder="Password" onChange={e => this.setState({pwd:e.target.value}) }/>
           </Form.Group>
-          <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-          </Form.Group>
           <Button variant="dark" onClick={this.handleClick}>Sign in</Button>
           <Button variant="info" onClick={this.handleRoute} style={{margin:'10px'}}>Sign Up</Button>
         </Form>
