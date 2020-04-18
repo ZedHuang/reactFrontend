@@ -27,7 +27,7 @@ export class Home extends Component {
     if(localStorage.getItem("email")){
       let e=localStorage.getItem("email");
       this.setState({email:e},console.log("Home get email from app component "+e));
-        fetch('http://localhost:5080/billboard100', { 
+        fetch('http://aa6ef030af3a246c3aa85b200471866b-231031702.us-east-1.elb.amazonaws.com:5080/billboard100', { 
             method: 'POST'
         }) 
         .then(
@@ -63,7 +63,7 @@ export class Home extends Component {
   }
 
   handleRating(name,artist){
-    const url = 'http://localhost:8080/getRating2?email='+this.state.email+"&song_name="+name+"&song_artist="+artist;
+    const url = 'http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/getRating2?email='+this.state.email+"&song_name="+name+"&song_artist="+artist;
     fetch(url, { 
             method: 'GET' 
         }) 
@@ -85,7 +85,7 @@ export class Home extends Component {
     this.state.songList.forEach((e)=>{
       if(e[0]===this.state.id+"."){
         if (window.confirm('You choosed : '+e[1]+' written by '+e[2]+" , click OK to confirm")){
-          const url='http://localhost:8080/newRating1?email='+this.state.email;
+          const url='http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/newRating1?email='+this.state.email;
     fetch(url, { 
             method: 'POST', headers: {"Content-Type": "application/json"}, body: JSON.stringify({comment:this.state.comment,
             rate:this.state.rating,song_name:e[1],song_artist:e[2]}) 

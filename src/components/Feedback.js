@@ -27,7 +27,7 @@ export class Feedback extends Component {
   }
 
   handleClick(){
-    fetch('http://localhost:8080/fetchList', { 
+    fetch('http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/fetchList', { 
             method: 'POST', 
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({rec:this.state.rec,comment:this.state.comments,email:this.state.email}) 

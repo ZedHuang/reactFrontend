@@ -30,7 +30,7 @@ export class Rating extends Component {
 
   componentDidMount(){
       console.log("get rating "+this.state.email);
-    const url = 'http://localhost:8080/getUserRatings?email='+this.state.email;
+    const url = 'http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/getUserRatings?email='+this.state.email;
     fetch(url, { 
             method: 'GET'
         })
@@ -69,7 +69,7 @@ export class Rating extends Component {
   }
 
   handleClick(){
-    const url = 'http://localhost:8080//getRecommendByUserName?email='+this.state.email;
+    const url = 'http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/getRecommendByUserName?email='+this.state.email;
     fetch(url, { 
             method: 'GET' 
         }) 

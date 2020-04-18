@@ -24,7 +24,7 @@ export class Login extends Component {
     handleClick(){
       const pwd = encodeURIComponent(this.state.pwd);
       var me=this;
-      const url="http://localhost:8080/login?email="+this.state.email+"&psw="+pwd;
+      const url="http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/login?email="+this.state.email+"&psw="+pwd;
       fetch(url,{
       method: "GET"})
       .then(response => response.json())

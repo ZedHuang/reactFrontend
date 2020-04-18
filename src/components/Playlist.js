@@ -22,7 +22,7 @@ export class Playlist extends Component {
 
   handleClick(){
   
-    const url = 'http://localhost:8080/getPlaylist?key='+this.state.mood;
+    const url = 'http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/getPlaylist?key='+this.state.mood;
     fetch(url, { 
             method: 'GET' 
         }) 

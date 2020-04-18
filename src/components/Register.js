@@ -30,6 +30,18 @@ export class Register extends Component {
 
     }
 
+    componentWillMount(){
+      console.log("home here here here here here here");
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+      if (this.props.number === nextProps.number) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
     handleClick(event){
       var me = this;
       const form = event.currentTarget;
@@ -51,10 +63,12 @@ export class Register extends Component {
         zip:this.state.zip,
         aboutMe:this.state.aboutme
       }
-      const url="http://localhost:8080/newUser";
+      event.preventDefault();
+      const url="http://a25c5b9c5e07e482bb242ba13c3af0b5-12839088.us-east-1.elb.amazonaws.com:8080/newUser";
       fetch(url,{method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify(user)})
       .then(
         response=>{
+          console.log("home sent data here here here here here here");
           if(response.ok){
             //if (window.confirm('Registered successfully! Go to login ?')){
               //window.location = '/';
